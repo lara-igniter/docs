@@ -5,9 +5,6 @@
     - [Environment Based Configuration](#environment-based-configuration)
     - [Databases & Migrations](#databases-and-migrations)
     - [Directory Configuration](#directory-configuration)
-- [Next Steps](#next-steps)
-    - [Laravel The Full Stack Framework](#laravel-the-fullstack-framework)
-    - [Laravel The API Backend](#laravel-the-api-backend)
 
 <a name="your-first-laraigniter-project"></a>
 ## Your First Laraigniter Project
@@ -45,8 +42,9 @@ Your `.env` file should not be committed to your application's source control, s
 <a name="databases-and-migrations"></a>
 ### Databases & Migrations
 
-Now that you have created your Laravel application, you probably want to store some data in a database. By default, your application's `.env` configuration file specifies that Laravel will be interacting with a MySQL database and will access the database at `127.0.0.1`. If you are developing on macOS and need to install MySQL, Postgres, or Redis locally, you may find it convenient to utilize [DBngin](https://dbngin.com/).
+Now that you have created your Laravel application, you probably want to store some data in a database. By default, your application's `.env` configuration file specifies that Laraigniter will be interacting with a MySQL database and will access the database at `127.0.0.1`.
 
+<!---
 If you do not want to install MySQL or Postgres on your local machine, you can always use a [SQLite](https://www.sqlite.org/index.html) database. SQLite is a small, fast, self-contained database engine. To get started, create a SQLite database by creating an empty SQLite file. Typically, this file will exist within the `database` directory of your Laravel application:
 
 ```shell
@@ -65,8 +63,14 @@ DB_USERNAME=root # [tl! remove]
 DB_PASSWORD= # [tl! remove]
 ```
 
-Once you have configured your SQLite database, you may run your application's [database migrations](/docs/{{version}}/migrations), which will create your application's database tables:
+Once you have configured your SQLite database, you may run your application's [database migrations](/docs/{{version}}/migrations), which will create your application's database tables: -->
+
+Once you have configured your database, you may run your application's [database migrations](/docs/{{version}}/migrations), which will create your application's database tables:
 
 ```shell
 php artisan migrate
 ```
+<a name="directory-configuration"></a>
+### Directory Configuration
+
+Laraigniter should always be served out of the root of the "web directory" configured for your web server. You should not attempt to serve a Laraigniter application out of a subdirectory of the "web directory". Attempting to do so could expose sensitive files present within your application.
